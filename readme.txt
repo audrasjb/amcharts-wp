@@ -11,7 +11,7 @@ Allows to easily add interactive charts and maps using amCharts libraries.
 
 == Description ==
 
-Ever tried getting JavaScript content into your Wordpress posts or pages? Yeah, that's impossible. WP strips down all
+Ever tried getting JavaScript content into your WordPress posts or pages? Yeah, that's impossible. WP strips down all
 the JavaScript.
 
 This makes adding JavaScript Charts and Maps a hassle.
@@ -31,7 +31,7 @@ The plugin has also many helpful functions:
 
 == Installation ==
 
-Use Wordpress Plugin page to search and install the amCharts plugin.
+Use WordPress Plugin page to search and install the amCharts plugin.
 
 If you choose to install in manually, make sure all the files from the downloaded archive are placed into your `/wp-content/plugins/amcharts/` directory.
 
@@ -43,9 +43,9 @@ Yes. You can either set the plugin to use publically available libraries loaded 
 
 = Will I be able to visually edit settings and data? =
 
-No. This plugin allows editing a code directly in Wordpress admin as well as inserting the charts into posts or pages using shortcodes.
+No. This plugin allows editing a code directly in WordPress admin as well as inserting the charts into posts or pages using shortcodes.
 
-It's not a fully fledged chart/map editor. It's a plugin designed to get your chart/map code into Wordpress easily.
+It's not a fully fledged chart/map editor. It's a plugin designed to get your chart/map code into WordPress easily.
 
 = Do I need to include any JavaScript libraries in my theme code? =
 
@@ -113,7 +113,7 @@ Yup. It fully supports WPML. You can create language-specific versions of the ch
 1. Plugin configuration. Either use amCharts-hosted free libraries or your own. Set default code per chart/map type.
 2. Easily create new charts or maps using presets right from the Admin menu.
 3. Modify resources, HTML or JavaScript portion of the chart. Or apply defaults right from the edit screen.
-4. Insert chart easily into body of the post or page using button from the rich editor tool belt. The charts are inserted as Wordpress shortcodes.
+4. Insert chart easily into body of the post or page using button from the rich editor tool belt. The charts are inserted as WordPress shortcodes.
 5. Select from the available charts or maps. No coding required.
 6. Embed a chart created in Live Editor directly into your posts or pages.
 7. The chart shortcodes are replaced with the actual charts when page renders.
@@ -181,7 +181,7 @@ Yup. It fully supports WPML. You can create language-specific versions of the ch
 * Added ability to pass in custom parameters via shortcode
 
 = 1.0.6 =
-* Fixed a warning that was being displayed if Wordpress debug mode was enabled
+* Fixed a warning that was being displayed if WordPress debug mode was enabled
 
 = 1.0.5 =
 * Fixed a bug that was causing resource list to break on some PHP setups
