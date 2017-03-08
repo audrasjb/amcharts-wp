@@ -10,7 +10,7 @@ Author: amCharts
 Version: 1.1.3
 Author URI: https://www.amcharts.com/
 License: GPL2
-Text Domain: amcharts
+Text Domain: amcharts-charts-and-maps
 Domain Path: /langs
 
 Copyright 2013-2017 Martynas Majeris (email : martynas@amcharts.com)

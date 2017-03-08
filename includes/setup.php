@@ -53,7 +53,7 @@ function amcharts_register_cpt() {
 
 add_action( 'plugins_loaded', 'amcharts_plugins_loaded' );
 function amcharts_plugins_loaded() {
-  load_plugin_textdomain( 'amcharts', false, dirname( plugin_basename( AMCHARTS_BASE ) ) . '/langs/' ); 
+  load_plugin_textdomain( 'amcharts-charts-and-maps', false, dirname( plugin_basename( AMCHARTS_BASE ) ) . '/langs/' ); 
 }
 
 /**
