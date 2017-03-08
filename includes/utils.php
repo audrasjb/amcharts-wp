@@ -12,15 +12,15 @@ function amcharts_is_new_post() {
  */
 function amcharts_get_chart_types() {
 	return array(
-		'serial' 	=> __( 'Serial', 'amcharts' ),
-		'pie' 		=> __( 'Pie', 'amcharts' ),
-		'xy' 			=> __( 'XY', 'amcharts' ),
-		'funnel' 	=> __( 'Funnel', 'amcharts' ),
-		'radar' 	=> __( 'Radar', 'amcharts' ),
-		'gauge' 	=> __( 'Gauge', 'amcharts' ),
-		'gantt' 	=> __( 'Gantt', 'amcharts' ),
-		'stock' 	=> __( 'Stock', 'amcharts' ),
-		'map' 		=> __( 'Map', 'amcharts' )
+		'serial' 	=> __( 'Serial', 'amcharts-charts-and-maps' ),
+		'pie' 		=> __( 'Pie', 'amcharts-charts-and-maps' ),
+		'xy' 			=> __( 'XY', 'amcharts-charts-and-maps' ),
+		'funnel' 	=> __( 'Funnel', 'amcharts-charts-and-maps' ),
+		'radar' 	=> __( 'Radar', 'amcharts-charts-and-maps' ),
+		'gauge' 	=> __( 'Gauge', 'amcharts-charts-and-maps' ),
+		'gantt' 	=> __( 'Gantt', 'amcharts-charts-and-maps' ),
+		'stock' 	=> __( 'Stock', 'amcharts-charts-and-maps' ),
+		'map' 		=> __( 'Map', 'amcharts-charts-and-maps' )
 	);
 }
 

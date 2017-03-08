@@ -51,7 +51,7 @@ function amcharts_get_defaults( $load_resources = false ) {
 function amcharts_settings_show() {
   // check permissions
   if (!current_user_can( 'manage_options' ) )  {
-    wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+    wp_die( __( 'You do not have sufficient permissions to access this page.', 'amcharts-charts-and-maps' ) );
   }
   
   // unqueue required scripts and styles
@@ -109,13 +109,13 @@ function amcharts_settings_show() {
     // save settings
     if ( 0 === count( $errors ) ) {
       update_option( 'amcharts_options', $settings );
-      $success = __( 'Settings were successfully saved!' );
+      $success = __( 'Settings were successfully saved!', 'amcharts-charts-and-maps' );
     }
   }
   ?>
   
   <?php screen_icon(); ?>
-  <h1><?php echo __( 'amCharts: Settings'); ?></h1>
+  <h1><?php echo __( 'amCharts: Settings', 'amcharts-charts-and-maps'); ?></h1>
   
   <?php if ( count($errors) > 0 ) : ?>
   <div class="message error"><?php echo wpautop(implode("\n", $errors)); ?></div>
@@ -124,23 +124,23 @@ function amcharts_settings_show() {
   <div class="message updated"><?php echo wpautop($success); ?></div>
   <?php endif; ?>
   
-  <h2 class="title"><?php echo __( 'Resources', 'amcharts' ); ?></h2>
+  <h2 class="title"><?php echo __( 'Resources', 'amcharts-charts-and-maps' ); ?></h2>
   
   <form method="post" action="">
     
   <table class="form-table">
     <tbody>
       <tr valign="top">
-        <th scope="row"><?php _e( 'Resource Storage', 'amcharts' ); ?></th>
+        <th scope="row"><?php _e( 'Resource Storage', 'amcharts-charts-and-maps' ); ?></th>
         <td>
           <fieldset>
             <p>
               <label><input type="radio" name="location" value="remote" id="amcharts-location-remote" <?php
                 echo 'remote' == $settings['location'] ? ' checked="checked"' : '';
-              ?> /> <?php _e( 'Resources are stored remotely ', 'amcharts' ); ?></label>
+              ?> /> <?php _e( 'Resources are stored remotely ', 'amcharts-charts-and-maps' ); ?></label>
             </p>
-            <p class="description"><?php _e( 'The free versions of libraries will be loaded from www.amcharts.com. These are fully functional but will show a small branding link on charts or maps.', 'amcharts' ); ?></p>
-            <p class="description"><?php _e( 'Want a link-free version? <a href="http://www.amcharts.com/online-store/" target="_blank">Purchase a commercial version</a> and help the development of this product as well as increase your karma points in the process.', 'amcharts' ); ?></p>
+            <p class="description"><?php _e( 'The free versions of libraries will be loaded from www.amcharts.com. These are fully functional but will show a small branding link on charts or maps.', 'amcharts-charts-and-maps' ); ?></p>
+            <p class="description"><?php _e( 'Want a link-free version? <a href="http://www.amcharts.com/online-store/" target="_blank">Purchase a commercial version</a> and help the development of this product as well as increase your karma points in the process.', 'amcharts-charts-and-maps' ); ?></p>
           </fieldset>
         </td>
       </tr>
@@ -152,9 +152,9 @@ function amcharts_settings_show() {
             <p>
               <label><input type="radio" name="location" value="local" id="amcharts-location-local" <?php
                 echo 'local' == $settings['location'] ? ' checked="checked"' : ''; ?>
-              /> <?php _e( 'Resources are stored locally ', 'amcharts' ); ?></label>
+              /> <?php _e( 'Resources are stored locally ', 'amcharts-charts-and-maps' ); ?></label>
             </p>
-            <p class="description"><?php _e( 'This allows you to load the libraries from the local server.', 'amcharts' ); ?></p>
+            <p class="description"><?php _e( 'This allows you to load the libraries from the local server.', 'amcharts-charts-and-maps' ); ?></p>
           </fieldset>
         </td>
       </tr>
@@ -162,15 +162,15 @@ function amcharts_settings_show() {
       <tr valign="top" id="amcharts-relative-urls-group" <?php
         echo 'remote' == $settings['location'] ? 'style="display: none;"' : '';
       ?>>
-        <th scope="row"><?php _e( 'Relative Resource URLs', 'amcharts' ); ?></th>
+        <th scope="row"><?php _e( 'Relative Resource URLs', 'amcharts-charts-and-maps' ); ?></th>
         <td>
           <fieldset>
             <p>
               <label><input type="checkbox" name="relative" value="1" id="amcharts-relative-urls" <?php
                 echo '1' == $settings['relative'] ? ' checked="checked"' : '';
-              ?> /> <?php _e( 'Use relative resources URLs, instead of full URLs', 'amcharts' ); ?></label>
+              ?> /> <?php _e( 'Use relative resources URLs, instead of full URLs', 'amcharts-charts-and-maps' ); ?></label>
             </p>
-            <p class="description"><?php _e( 'NOTE: Changing this setting will not affect charts that are already created.', 'amcharts' ); ?></p>
+            <p class="description"><?php _e( 'NOTE: Changing this setting will not affect charts that are already created.', 'amcharts-charts-and-maps' ); ?></p>
           </fieldset>
         </td>
       </tr>
@@ -178,34 +178,34 @@ function amcharts_settings_show() {
       <tr valign="top" id="amcharts-live-editor-group" <?php
         echo 'remote' == $settings['location'] ? 'style="display: none;"' : '';
       ?>>
-        <th scope="row"><?php _e( 'Live Editor Integration', 'amcharts' ); ?></th>
+        <th scope="row"><?php _e( 'Live Editor Integration', 'amcharts-charts-and-maps' ); ?></th>
         <td>
           <fieldset>
             <p>
               <label><input type="checkbox" name="own" value="1" id="amcharts-own-libraries" <?php
                 echo '1' == $settings['own'] ? ' checked="checked"' : '';
-              ?> /> <?php _e( 'Use local amCharts libraries for Live Editor-hosted charts', 'amcharts' ); ?></label>
+              ?> /> <?php _e( 'Use local amCharts libraries for Live Editor-hosted charts', 'amcharts-charts-and-maps' ); ?></label>
             </p>
-            <p class="description"><?php _e( 'If you want to display Live Editor-created charts without branding link:', 'amcharts' ); ?></p>
-            <p class="description">- <?php _e( 'Install commercial version of amCharts libraries.', 'amcharts' ); ?></p>
-            <p class="description">- <?php _e( 'Check "Resources are stored locally" above.', 'amcharts' ); ?></p>
-            <p class="description">- <?php _e( 'You may need to also click "Find them for me" button under "Local Paths".', 'amcharts' ); ?></p>
-            <p class="description">- <?php _e( 'Check "Use local amCharts libraries" above.', 'amcharts' ); ?></p>
+            <p class="description"><?php _e( 'If you want to display Live Editor-created charts without branding link:', 'amcharts-charts-and-maps' ); ?></p>
+            <p class="description">- <?php _e( 'Install commercial version of amCharts libraries.', 'amcharts-charts-and-maps' ); ?></p>
+            <p class="description">- <?php _e( 'Check "Resources are stored locally" above.', 'amcharts-charts-and-maps' ); ?></p>
+            <p class="description">- <?php _e( 'You may need to also click "Find them for me" button under "Local Paths".', 'amcharts-charts-and-maps' ); ?></p>
+            <p class="description">- <?php _e( 'Check "Use local amCharts libraries" above.', 'amcharts-charts-and-maps' ); ?></p>
           </fieldset>
         </td>
       </tr>
 
       <tr valign="top">
-        <th scope="row"><?php _e( 'Error Handling', 'amcharts' ); ?></th>
+        <th scope="row"><?php _e( 'Error Handling', 'amcharts-charts-and-maps' ); ?></th>
         <td>
           <fieldset>
             <p>
               <label><input type="checkbox" name="wrap" value="1" <?php
                 echo '1' == $settings['wrap'] ? ' checked="checked"' : '';
-              ?> /> <?php _e( 'Use exception handling on chart and map code (recommended)', 'amcharts' ); ?></label>
+              ?> /> <?php _e( 'Use exception handling on chart and map code (recommended)', 'amcharts-charts-and-maps' ); ?></label>
             </p>
-            <p class="description"><?php _e( 'If checked, the code for charts and maps will be wrapped with exception handling code (try / catch).', 'amcharts' ); ?></p>
-            <p class="description"><?php _e( 'This will make sure a faulty code does not prevent other JavaScript on the same page executing properly.', 'amcharts' ); ?></p>
+            <p class="description"><?php _e( 'If checked, the code for charts and maps will be wrapped with exception handling code (try / catch).', 'amcharts-charts-and-maps' ); ?></p>
+            <p class="description"><?php _e( 'This will make sure a faulty code does not prevent other JavaScript on the same page executing properly.', 'amcharts-charts-and-maps' ); ?></p>
           </fieldset>
         </td>
       </tr>
@@ -214,8 +214,8 @@ function amcharts_settings_show() {
         echo 'remote' == $settings['location'] ? 'style="display: none;"' : '';
       ?>>
         <th scope="row">
-          <?php _e( 'Local Paths', 'amcharts' ); ?>
-          <p class="description"><?php _e( 'Enter paths to your amCharts folders. Separate them by line breaks. The paths must be relative to your web root.', 'amcharts' ); ?> (<?php echo home_url(); ?>)</p>
+          <?php _e( 'Local Paths', 'amcharts-charts-and-maps' ); ?>
+          <p class="description"><?php _e( 'Enter paths to your amCharts folders. Separate them by line breaks. The paths must be relative to your web root.', 'amcharts-charts-and-maps' ); ?> (<?php echo home_url(); ?>)</p>
         </th>
         <td>
           <fieldset>
@@ -224,12 +224,12 @@ function amcharts_settings_show() {
             </p>
             <p>
               <textarea name="paths" class="widefat" id="amcharts-path"><?php echo esc_textarea( $settings['paths'] ); ?></textarea>
-              <p class="description"><?php _e( 'If you are not sure what to do, just unzip the amCharts archive you have downloaded and put into some directory under your web root. Then click "Find them for me".', 'amcharts' ); ?></p>
+              <p class="description"><?php _e( 'If you are not sure what to do, just unzip the amCharts archive you have downloaded and put into some directory under your web root. Then click "Find them for me".', 'amcharts-charts-and-maps' ); ?></p>
             </p>
             <p>
-              <input type="button" class="button" id="amcharts-find-path" value="<?php echo esc_attr( __( 'Find them for me', 'amcharts' ) ); ?>" />
+              <input type="button" class="button" id="amcharts-find-path" value="<?php echo esc_attr( __( 'Find them for me', 'amcharts-charts-and-maps' ) ); ?>" />
               <span class="amcharts-working" id="amcharts-path-working" style="display: none;"></span>
-              <span class="amcharts-error" id="amcharts-find-path-error" style="display: none;"><?php _e( 'amCharts library was not found on your server', 'amcharts' ); ?></span>
+              <span class="amcharts-error" id="amcharts-find-path-error" style="display: none;"><?php _e( 'amCharts library was not found on your server', 'amcharts-charts-and-maps' ); ?></span>
             </p>
           </fieldset>
         </td>
@@ -237,8 +237,8 @@ function amcharts_settings_show() {
       
       <tr valign="top">
         <th scope="row">
-          <?php _e( 'Resource List', 'amcharts' ); ?>
-          <p class="description"><?php _e( 'This is a list of resources available for use. You will be able to select them while creating charts or maps.', 'amcharts' ); ?></p>
+          <?php _e( 'Resource List', 'amcharts-charts-and-maps' ); ?>
+          <p class="description"><?php _e( 'This is a list of resources available for use. You will be able to select them while creating charts or maps.', 'amcharts-charts-and-maps' ); ?></p>
         </th>
         <td>
           <fieldset>
@@ -246,8 +246,8 @@ function amcharts_settings_show() {
               <?php echo nl2br( $settings['resources'] ); ?>
             </div>
             <p>
-              <input type="submit" class="button" id="amcharts-rescan-resources" value="<?php echo esc_attr( __( 'Refresh the list', 'amcharts' ) ); ?>" />
-              <span class="description"><?php _e( 'Attention! Pressing this button will save current settings.', 'amcharts' ); ?></span>
+              <input type="submit" class="button" id="amcharts-rescan-resources" value="<?php echo esc_attr( __( 'Refresh the list', 'amcharts-charts-and-maps' ) ); ?>" />
+              <span class="description"><?php _e( 'Attention! Pressing this button will save current settings.', 'amcharts-charts-and-maps' ); ?></span>
             </p>
           </fieldset>
         </td>
@@ -256,7 +256,7 @@ function amcharts_settings_show() {
       <tr valign="top">
         <th scope="row">
           <?php _e( 'Custom Resources', 'amcharts' ); ?>
-          <p class="description"><?php _e( 'Add your own resources here. Full or relative URLs (we include them the way you have them here). Separate by line break.', 'amcharts' ); ?></p>
+          <p class="description"><?php _e( 'Add your own resources here. Full or relative URLs (we include them the way you have them here). Separate by line break.', 'amcharts-charts-and-maps' ); ?></p>
         </th>
         <td>
           <fieldset>
@@ -269,14 +269,14 @@ function amcharts_settings_show() {
     </tbody>
   </table>
 
-  <h2 class="title"><?php echo __( 'Defaults', 'amcharts' ); ?></h2>
+  <h2 class="title"><?php echo __( 'Defaults', 'amcharts-charts-and-maps' ); ?></h2>
 
   <table class="form-table">
     <tbody>
       <tr valign="top">
         <th scope="row">
-          <p class="description"><?php _e( 'This section allows setting default resources, HTML and JavaScript code per chart/map type.', 'amcharts' ); ?></p>
-          <p class="description"><?php _e( 'When creating new chart or map entry, you will be able to select from one of these presets.', 'amcharts' ); ?></p>
+          <p class="description"><?php _e( 'This section allows setting default resources, HTML and JavaScript code per chart/map type.', 'amcharts-charts-and-maps' ); ?></p>
+          <p class="description"><?php _e( 'When creating new chart or map entry, you will be able to select from one of these presets.', 'amcharts-charts-and-maps' ); ?></p>
         </th>
         <td>
           <div id="amcharts-tabs">
@@ -297,12 +297,12 @@ function amcharts_settings_show() {
               
               ?><div id="tabs-<?php echo $chart_type; ?>" class="amcharts-tab">
 
-              <h4><?php _e( 'Resources', 'amcharts' ); ?></h4>
+              <h4><?php _e( 'Resources', 'amcharts-charts-and-maps' ); ?></h4>
               
               <div class="amcharts-resource-list" style="display: <?php echo $edit ? 'none' : 'block'; ?>;">
                 <?php if ( '' == $settings['chart_types'][$chart_type]['default_resources'] && 'local' == $settings['location'] ) { ?>
-                  <p class="amcharts-notice"><?php _e( 'We did not find libraries required for this chart type in your local storage.', 'amcharts' ); ?></p>
-                  <p class="amcharts-notice"><?php _e( 'Make sure you hit the "Refresh the list" button higher on this page when you install them.', 'amcharts' ); ?></p>
+                  <p class="amcharts-notice"><?php _e( 'We did not find libraries required for this chart type in your local storage.', 'amcharts-charts-and-maps' ); ?></p>
+                  <p class="amcharts-notice"><?php _e( 'Make sure you hit the "Refresh the list" button higher on this page when you install them.', 'amcharts-charts-and-maps' ); ?></p>
                 <?php } else { ?>
                   <?php echo nl2br( $settings['chart_types'][$chart_type]['default_resources'] ); ?>
                 <?php } ?>
@@ -318,14 +318,14 @@ function amcharts_settings_show() {
                   $libs = array_merge( $libs, amcharts_split_libs( $settings['custom_resources'] ) );
                   ?>
                   <select class="amcharts-select-resource">
-                    <option value=""><?php _e( 'Select a resource', 'amcharts' ); ?></option>
+                    <option value=""><?php _e( 'Select a resource', 'amcharts-charts-and-maps' ); ?></option>
                     <?php
                     foreach( $libs as $lib ) {
                       ?><option value="<?php echo esc_attr( $lib ); ?>"><?php echo $lib; ?></option><?php
                     }
                     ?>
                   </select>
-                  <input type="button" class="button amcharts-add-resource" value="<?php _e( 'Add', 'amcharts' ) ; ?>" />
+                  <input type="button" class="button amcharts-add-resource" value="<?php _e( 'Add', 'amcharts-charts-and-maps' ) ; ?>" />
                 </p>
               </fieldset>
               
@@ -334,29 +334,29 @@ function amcharts_settings_show() {
                   if ( $settings['chart_types'][$chart_type]['custom_resources'] ) {
                     ?>checked="checked"<?php
                   }
-                ?>/> <?php _e( 'I want to manage resource list myself' , 'amcharts' ); ?></label>
+                ?>/> <?php _e( 'I want to manage resource list myself' , 'amcharts-charts-and-maps' ); ?></label>
               </p>
               
               <p class="description">
-                <?php _e( "If the above box unchecked, plugin will manage required resources and their urls for you. If this is checked, you're on your own ;)", 'amcharts' ); ?>
+                <?php _e( "If the above box unchecked, plugin will manage required resources and their urls for you. If this is checked, you're on your own ;)", 'amcharts-charts-and-maps' ); ?>
               </p>
               
               
-              <h4><?php _e( 'HTML', 'amcharts' ); ?></h4>
+              <h4><?php _e( 'HTML', 'amcharts-charts-and-maps' ); ?></h4>
               <p>
                 <textarea name="chart_types[<?php echo $chart_type; ?>][default_html]" class="widefat code code-html"><?php echo esc_textarea( $settings['chart_types'][$chart_type]['default_html'] ); ?></textarea>
               </p>
               <p>
-                <p class="description"><?php _e( 'Enter the default HTML to populate new entries with. Use <strong>$CHART$</strong> symbol for safe and unique chart ids and variables.', 'amcharts' ); ?></p>
+                <p class="description"><?php _e( 'Enter the default HTML to populate new entries with. Use <strong>$CHART$</strong> symbol for safe and unique chart ids and variables.', 'amcharts-charts-and-maps' ); ?></p>
               </p>
               
-              <h4><?php _e( 'JavaScript', 'amcharts' ); ?></h4>
+              <h4><?php _e( 'JavaScript', 'amcharts-charts-and-maps' ); ?></h4>
               
               <p>
                 <textarea name="chart_types[<?php echo $chart_type; ?>][default_javascript]" class="widefat code code-javascript"><?php echo esc_textarea( $settings['chart_types'][$chart_type]['default_javascript'] ); ?></textarea>
               </p>
               <p>
-                <p class="description"><?php _e( 'Enter the default JavaScript to populate new entries with. Use <strong>$CHART$</strong> symbol for safe and unique chart ids and variables.', 'amcharts' ); ?></p>
+                <p class="description"><?php _e( 'Enter the default JavaScript to populate new entries with. Use <strong>$CHART$</strong> symbol for safe and unique chart ids and variables.', 'amcharts-charts-and-maps' ); ?></p>
               </p>
               
             </div><?php

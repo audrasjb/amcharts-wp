@@ -25,7 +25,7 @@ amcharts_enqueue_javascript( $javascript );
 <html <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
-		<title><?php _e( 'amCharts Preview', 'amcharts' ); ?></title>
+		<title><?php _e( 'amCharts Preview', 'amcharts-charts-and-maps' ); ?></title>
 		<?php wp_head(); ?>
 	</head>
 	<body>

@@ -8,35 +8,35 @@ add_action( 'add_meta_boxes', 'amcharts_meta_boxes' );
 function amcharts_meta_boxes () {
 	add_meta_box(
 		'amcharts_resources_box',
-		__( 'Resources', 'amcharts' ),
+		__( 'Resources', 'amcharts-charts-and-maps' ),
 		'amcharts_resources_box',
 		'amchart'
 	);
 	
 	add_meta_box(
 		'amcharts_html_box',
-		__( 'HTML', 'amcharts' ),
+		__( 'HTML', 'amcharts-charts-and-maps' ),
 		'amcharts_html_box',
 		'amchart'
 	);
 	
 	add_meta_box(
 		'amcharts_javascript_box',
-		__( 'JavaScript', 'amcharts' ),
+		__( 'JavaScript', 'amcharts-charts-and-maps' ),
 		'amcharts_javascript_box',
 		'amchart'
 	);
 	
 	add_meta_box(
 		'amcharts_defaults_box',
-		__( 'Apply default code', 'amcharts' ),
+		__( 'Apply default code', 'amcharts-charts-and-maps' ),
 		'amcharts_defaults_box',
 		'amchart'
 	);
 	
 	add_meta_box(
 		'amcharts_misc_box',
-		__( 'Chart tools', 'amcharts' ),
+		__( 'Chart tools', 'amcharts-charts-and-maps' ),
 		'amcharts_misc_box',
 		'amchart',
 		'side'
@@ -73,14 +73,14 @@ function amcharts_resources_box ( $post ) {
 		</p>
 	
 		<select class="amcharts-select-resource">
-			<option value=""><?php _e( 'Select a resource', 'amcharts' ); ?></option>
+			<option value=""><?php _e( 'Select a resource', 'amcharts-charts-and-maps' ); ?></option>
 			<?php
 			foreach( $libs as $lib ) {
 				?><option value="<?php echo esc_attr( $lib ); ?>"><?php echo $lib; ?></option><?php
 			}
 			?>
 		</select>
-		<input type="button" class="button amcharts-add-resource" value="<?php _e( 'Add', 'amcharts' ) ; ?>" />
+		<input type="button" class="button amcharts-add-resource" value="<?php _e( 'Add', 'amcharts-charts-and-maps' ) ; ?>" />
 	</fieldset>
 	<?php
 }
@@ -110,7 +110,7 @@ function amcharts_html_box ( $post ) {
 	</p>
 	
 	<p class="description">
-		<?php _e( 'Please use the following code <strong>$CHART$</strong> in place of the chart IDs or variables. It will be replaced with the proper, safe and unique chart ID when generating the page', 'amcharts' ); ?>
+		<?php _e( 'Please use the following code <strong>$CHART$</strong> in place of the chart IDs or variables. It will be replaced with the proper, safe and unique chart ID when generating the page', 'amcharts-charts-and-maps' ); ?>
 	</p>
 	
 	<?php
@@ -141,7 +141,7 @@ function amcharts_javascript_box ( $post ) {
 	</p>
 	
 	<p class="description">
-		<?php _e( 'Please use the following code <strong>$CHART$</strong> in place of the chart IDs or variables. It will be replaced with the proper, safe and unique chart ID when generating the page', 'amcharts' ); ?>
+		<?php _e( 'Please use the following code <strong>$CHART$</strong> in place of the chart IDs or variables. It will be replaced with the proper, safe and unique chart ID when generating the page', 'amcharts-charts-and-maps' ); ?>
 	</p>
 	
 	<?php
@@ -159,16 +159,16 @@ function amcharts_defaults_box ( $post ) {
 	
 	<p>
 		<select id="amcharts-chart-type-default">
-			<option value=""><?php echo esc_attr( __( 'Select a chart type to apply', 'amcharts' ) ); ?></option>
+			<option value=""><?php echo esc_attr( __( 'Select a chart type to apply', 'amcharts-charts-and-maps' ) ); ?></option>
 			<?php foreach ( $chart_types as $chart_type => $chart_type_name ) { ?>
 			<option value="<?php echo $chart_type; ?>"><?php echo $chart_type_name; ?></option>
 			<?php } ?>
 		</select>
-		<input type="button" class="button" id="amcharts-apply-default" value="<?php echo esc_attr( __( 'Apply', 'amcharts' ) ); ?>" disabled="disabled" />
+		<input type="button" class="button" id="amcharts-apply-default" value="<?php echo esc_attr( __( 'Apply', 'amcharts-charts-and-maps' ) ); ?>" disabled="disabled" />
 	</p>
 	
 	<p class="description">
-		<?php _e( 'ATTENTION! When you select a chart type above and click "Apply", the content in Resources, HTML and JavaScript fields will be overwritten with the defaults set by the website administrator.', 'amcharts' ); ?>
+		<?php _e( 'ATTENTION! When you select a chart type above and click "Apply", the content in Resources, HTML and JavaScript fields will be overwritten with the defaults set by the website administrator.', 'amcharts-charts-and-maps' ); ?>
 	</p>
 	
 	<script>
@@ -197,12 +197,12 @@ function amcharts_misc_box ( $post ) {
 	}
 	?>
 	<div class="misc-pub-section">
-		<strong><label for="amcharts-slug"><?php _e( 'Slug', 'amcharts' ); ?></label></strong><br />
+		<strong><label for="amcharts-slug"><?php _e( 'Slug', 'amcharts-charts-and-maps' ); ?></label></strong><br />
 		<input name="slug" type="text" class="widefat" id="amcharts-slug" value="<?php echo esc_attr( $slug ); ?>" />
-		<p class="description"><?php _e( 'Use this field to enter a user-friendly slug (ID) for your chart that can be used in shortcodes, i.e. [amcharts id="chart-1"]', 'amcharts' ); ?></p>
+		<p class="description"><?php _e( 'Use this field to enter a user-friendly slug (ID) for your chart that can be used in shortcodes, i.e. [amcharts id="chart-1"]', 'amcharts-charts-and-maps' ); ?></p>
 	</div>
 	<div class="misc-pub-section amcharts-center amcharts-edit-section">
-		<a class="button" id="amcharts-preview"><?php _e( 'Preview chart or map', 'amcharts' ); ?></a>
+		<a class="button" id="amcharts-preview"><?php _e( 'Preview chart or map', 'amcharts-charts-and-maps' ); ?></a>
 	</div>
 	<script>
 		var amcharts_preview_url = '<?php echo esc_js( home_url( '?amcharts_preview=1' ) ); ?>';
@@ -245,7 +245,7 @@ function amcharts_save_post ( $post_id ) {
 add_filter( 'manage_posts_columns', 'amcharts_manage_posts_columns', 100, 2 );
 function amcharts_manage_posts_columns ( $posts_columns, $post_type = 'post' ) {
 	if ( 'amchart' == $post_type )
-		$posts_columns['amcharts_shortcode'] = __( 'Shortcode', 'amcharts' );
+		$posts_columns['amcharts_shortcode'] = __( 'Shortcode', 'amcharts-charts-and-maps' );
 	
 	return $posts_columns;
 }
@@ -291,9 +291,9 @@ function amcharts_admin_head () {
 	?>
 	<script>
 		var amcharts_prompts = {
-			'insert_chart': '<?php echo esc_js( __( 'Insert chart or map', 'amcharts' ) ); ?>',
-			'select_chart': '<?php echo esc_js( __( 'Select a chart or map to insert', 'amcharts' ) ); ?>',
-			'are_you_sure': '<?php echo esc_js( __( 'Are you sure? This operation cannot be undone.', 'amcharts' ) ); ?>'
+			'insert_chart': '<?php echo esc_js( __( 'Insert chart or map', 'amcharts-charts-and-maps' ) ); ?>',
+			'select_chart': '<?php echo esc_js( __( 'Select a chart or map to insert', 'amcharts-charts-and-maps' ) ); ?>',
+			'are_you_sure': '<?php echo esc_js( __( 'Are you sure? This operation cannot be undone.', 'amcharts-charts-and-maps' ) ); ?>'
 		};
 		
 		var amcharts_chart_types = <?php echo json_encode( amcharts_get_chart_types() ); ?>
@@ -314,10 +314,10 @@ function amcharts_get_posts() {
 	);
 	if ( '' != $_POST['query'] ) {
 		$query['s'] = $_POST['query'];
-		?><h2><?php _e( 'Search results', 'amcharts' ); ?></h2><?php
+		?><h2><?php _e( 'Search results', 'amcharts-charts-and-maps' ); ?></h2><?php
 	}
 	else {
-		?><h2><?php _e( 'Recent charts', 'amcharts' ); ?></h2><?php
+		?><h2><?php _e( 'Recent charts', 'amcharts-charts-and-maps' ); ?></h2><?php
 	}
 	?><ul id="results"><?php
 	$posts = get_posts( $query );
